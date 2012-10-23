@@ -1,0 +1,9 @@
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project'
+
+Motion::Project::App.setup do |app|
+  # Use `rake config' to see complete project settings.
+  app.name = 'Refreshable'
+  app.files_dependencies 'app/refreshable_table_view_controller.rb' => 'app/refresh_table_header_view.rb'
+  app.files_dependencies 'app/tweets_controller.rb' => 'app/refreshable_table_view_controller.rb'
+end
